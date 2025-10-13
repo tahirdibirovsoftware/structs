@@ -1,0 +1,46 @@
+{
+  "name": "structs",
+  "version": "0.0.0",
+  "description": "Basic data structures for working in the JS environment",
+  "keywords": [
+    "structs"
+  ],
+  "homepage": "https://github.com/tahirdibirovsoftware/structs#readme",
+  "bugs": {
+    "url": "https://github.com/tahirdibirovsoftware/structs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahirdibirovsoftware/structs.git"
+  },
+  "license": "MIT",
+  "author": "Tahir Dibirov II",
+  "type": "commonjs",
+  "main": "main.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "test": "npx jest .",
+    "release": "semantic-release",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@eslint/js": "^9.37.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/npm": "^12.0.2",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.2.4",
+    "prettier": "^3.6.2",
+    "semantic-release": "^24.2.9",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1"
+  }
+}

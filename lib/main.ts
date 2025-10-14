@@ -3,4 +3,4 @@ export const main = (): number => {
   return 0;
 };
 
-main();
+// Do not call main() automatically - keep library side-effect free. Consumers can invoke it.

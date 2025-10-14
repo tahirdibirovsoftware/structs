@@ -13,11 +13,11 @@ export default defineConfig([
     ...tseslint.configs.strict,
     prettierConfig,
     {
-        files: ['**/*.ts', '**/*.tsx'],
+        files: ['**/*.ts', '**/*.tsx', '**/*.test.ts'],
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
-                project: ['./tsconfig.json'],
+                project: ['./tsconfig.eslint.json'],
                 tsconfigRootDir: import.meta.dirname,
             },
         },

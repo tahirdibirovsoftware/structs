@@ -1,5 +1,5 @@
 export const main = (): number => {
-  console.log('Started!!!');
+  console.log('Started!');
   return 0;
 };
 

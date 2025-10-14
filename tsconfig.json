@@ -1,25 +1,20 @@
 {
-    "compilerOptions": {
-
-        // 1. **Essential:** Tells the compiler to generate .d.ts files
-        "declaration": true,
-        // 2. **Recommended:** Only emit declaration files, not the compiled .js files.
-        //    (You typically use a bundler like Webpack/Rollup for the .js files)
-        "emitDeclarationOnly": true,
-        // 3. **Required:** Specifies the output directory for the generated files (e.g., dist/types)
-        "outDir": "./dist/types",
-        // 4. If you have JSDoc in your JavaScript files and want types generated from them
-        "allowJs": true,
-        // 5. If you want .d.ts files to have source maps (useful for debugging in IDEs)
-        "declarationMap": true,
-        // ... other compiler options (target, module, strict, etc.)
-    },
-    // Specifies which files tsc should process
-    "include": [
-        "lib/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+  "compilerOptions": {
+    // 1. **Essential:** Tells the compiler to generate .d.ts files
+    "declaration": true,
+    // 2. **Recommended:** Only emit declaration files, not the compiled .js files.
+    //    (You typically use a bundler like Webpack/Rollup for the .js files)
+    "emitDeclarationOnly": true,
+    // 3. **Required:** Specifies the output directory for the generated files (e.g., dist/types)
+    "outDir": "./dist/types",
+    // 4. If you have JSDoc in your JavaScript files and want types generated from them
+    "allowJs": true,
+    // 5. If you want .d.ts files to have source maps (useful for debugging in IDEs)
+    "declarationMap": true,
+    // ... other compiler options (target, module, strict, etc.)
+    "esModuleInterop": true
+  },
+  // Specifies which files tsc should process
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

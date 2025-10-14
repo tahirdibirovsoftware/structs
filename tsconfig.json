@@ -15,6 +15,6 @@
     "esModuleInterop": true
   },
   // Specifies which files tsc should process
-  "include": ["lib/**/*"],
+  "include": ["lib/**/*", "./*.ts"],
   "exclude": ["node_modules", "dist"]
 }

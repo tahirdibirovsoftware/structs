@@ -50,4 +50,17 @@ describe('LinkedList', () => {
     expect(listGen.next().value).toBe(7);
     expect(listGen.next().done).toBe(true);
   });
+  test('should return correct size of list', () => {
+    const list = new LinkedList();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.clear();
+    expect(list.getSize()).toBe(0);
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.remove();
+    expect(list.getSize()).toBe(2);
+  });
 });

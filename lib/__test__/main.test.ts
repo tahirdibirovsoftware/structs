@@ -1,3 +1,4 @@
+import { NotFoundError } from '../exceptions';
 import { LinkedList } from '../index';
 
 describe('LinkedList', () => {
@@ -18,5 +19,15 @@ describe('LinkedList', () => {
       { id: 1, name: 'Ibrahim' },
       { id: 2, name: 'Abdullah' },
     ]);
+  });
+  test('should remove element from header and return its value', () => {
+    const list = new LinkedList();
+    list.add(44);
+    list.add(32);
+    list.add(22);
+    expect(list.remove()).toBe(44);
+    expect(list.remove()).toBe(32);
+    expect(list.remove()).toBe(22);
+    expect(() => list.remove()).toThrow(NotFoundError);
   });
 });

@@ -46,6 +46,13 @@ export class LinkedList<T> {
 
     this.header = null;
   }
+  public *listGenerator(): IterableIterator<T> {
+    let current = this.header;
+    while (current !== null) {
+      yield current.data;
+      current = current.next;
+    }
+  }
   *[Symbol.iterator](): IterableIterator<T> {
     let current = this.header;
     while (current !== null) {

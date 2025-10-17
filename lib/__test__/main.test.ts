@@ -39,4 +39,15 @@ describe('LinkedList', () => {
     const arrayList = Array.from(list);
     expect(arrayList).toEqual([]);
   });
+  test('should iterate with generate function', () => {
+    const list = new LinkedList();
+    list.add(4);
+    list.add(6);
+    list.add(7);
+    const listGen = list.listGenerator();
+    expect(listGen.next().value).toBe(4);
+    expect(listGen.next().value).toBe(6);
+    expect(listGen.next().value).toBe(7);
+    expect(listGen.next().done).toBe(true);
+  });
 });

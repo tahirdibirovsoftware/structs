@@ -30,4 +30,13 @@ describe('LinkedList', () => {
     expect(list.remove()).toBe(22);
     expect(() => list.remove()).toThrow(NotFoundError);
   });
+  test('should clear the LinkedList', () => {
+    const list = new LinkedList();
+    list.add(6);
+    list.add(3);
+    list.add(2);
+    list.clear();
+    const arrayList = Array.from(list);
+    expect(arrayList).toEqual([]);
+  });
 });

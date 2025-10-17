@@ -34,6 +34,18 @@ export class LinkedList<T> {
       return removed.data;
     } else throw new NotFoundError('Cannot remove an empty list');
   }
+  public clear(): void {
+    let current: Node<T> | null = this.header;
+    let nextNode: Node<T> | null;
+
+    while (current !== null) {
+      nextNode = current.next;
+      current.next = null;
+      current = nextNode;
+    }
+
+    this.header = null;
+  }
   *[Symbol.iterator](): IterableIterator<T> {
     let current = this.header;
     while (current !== null) {

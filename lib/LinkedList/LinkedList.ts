@@ -25,4 +25,11 @@ export class LinkedList<T> {
       current.next = node;
     }
   }
+  *[Symbol.iterator](): IterableIterator<T> {
+    let current = this.header;
+    while (current !== null) {
+      yield current.data;
+      current = current.next;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { NotFoundError } from '../exceptions';
 import { LinkedList } from '../index';
 
 describe('LinkedList', () => {
@@ -18,5 +19,48 @@ describe('LinkedList', () => {
       { id: 1, name: 'Ibrahim' },
       { id: 2, name: 'Abdullah' },
     ]);
+  });
+  test('should remove element from header and return its value', () => {
+    const list = new LinkedList();
+    list.add(44);
+    list.add(32);
+    list.add(22);
+    expect(list.remove()).toBe(44);
+    expect(list.remove()).toBe(32);
+    expect(list.remove()).toBe(22);
+    expect(() => list.remove()).toThrow(NotFoundError);
+  });
+  test('should clear the LinkedList', () => {
+    const list = new LinkedList();
+    list.add(6);
+    list.add(3);
+    list.add(2);
+    list.clear();
+    const arrayList = Array.from(list);
+    expect(arrayList).toEqual([]);
+  });
+  test('should iterate with generate function', () => {
+    const list = new LinkedList();
+    list.add(4);
+    list.add(6);
+    list.add(7);
+    const listGen = list.listGenerator();
+    expect(listGen.next().value).toBe(4);
+    expect(listGen.next().value).toBe(6);
+    expect(listGen.next().value).toBe(7);
+    expect(listGen.next().done).toBe(true);
+  });
+  test('should return correct size of list', () => {
+    const list = new LinkedList();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.clear();
+    expect(list.getSize()).toBe(0);
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.remove();
+    expect(list.getSize()).toBe(2);
   });
 });

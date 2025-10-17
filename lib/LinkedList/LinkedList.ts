@@ -1,3 +1,5 @@
+import { NotFoundError } from '../exceptions';
+
 class Node<T> {
   public data: T;
   public next: Node<T> | null;
@@ -24,6 +26,13 @@ export class LinkedList<T> {
       }
       current.next = node;
     }
+  }
+  public remove(): T {
+    if (this.header !== null) {
+      const removed = this.header;
+      this.header = this.header.next;
+      return removed.data;
+    } else throw new NotFoundError('Cannot remove an empty list');
   }
   *[Symbol.iterator](): IterableIterator<T> {
     let current = this.header;

@@ -37,10 +37,10 @@ describe('LinkedList', () => {
   describe('Removal', () => {
     test('should remove elements from head and return their values', () => {
       const list = createList([44, 32, 22]);
-      expect(list.remove()).toBe(44);
-      expect(list.remove()).toBe(32);
-      expect(list.remove()).toBe(22);
-      expect(() => list.remove()).toThrow(NotFoundError);
+      expect(list.removeFirst()).toBe(44);
+      expect(list.removeFirst()).toBe(32);
+      expect(list.removeFirst()).toBe(22);
+      expect(() => list.removeFirst()).toThrow(NotFoundError);
     });
   });
 
@@ -61,7 +61,7 @@ describe('LinkedList', () => {
       list.add(1);
       list.add(2);
       list.add(3);
-      list.remove();
+      list.removeFirst();
       expect(list.getSize()).toBe(2);
     });
   });

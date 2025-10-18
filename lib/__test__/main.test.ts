@@ -63,4 +63,21 @@ describe('LinkedList', () => {
     list.remove();
     expect(list.getSize()).toBe(2);
   });
+  test('it should reverse the list', () => {
+    const list = new LinkedList();
+    const emptyList = new LinkedList();
+    emptyList.reverse();
+    const listWithSingleElement = new LinkedList();
+    listWithSingleElement.reverse();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.reverse();
+    const reversedArrayList = Array.from(list);
+    const reversedEmptyArrayList = Array.from(emptyList);
+    const reversedArrayListWithSingleElement = Array.from(listWithSingleElement);
+    expect(reversedArrayList).toEqual([3, 2, 1]);
+    expect(reversedEmptyArrayList).toEqual([]);
+    expect(reversedArrayListWithSingleElement).toEqual([]);
+  });
 });

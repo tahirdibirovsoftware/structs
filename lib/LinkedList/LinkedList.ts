@@ -54,6 +54,19 @@ export class LinkedList<T> {
     this.header = null;
     this.size = 0;
   }
+  public reverse(): void {
+    let current = this.header,
+      prev = null,
+      next = null;
+    while (current !== null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    this.header = prev;
+    return;
+  }
   public *listGenerator(): IterableIterator<T> {
     let current = this.header;
     while (current !== null) {

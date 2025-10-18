@@ -34,13 +34,23 @@ describe('LinkedList', () => {
     });
   });
 
-  describe('Removal', () => {
-    test('should remove elements from head and return their values', () => {
+  describe('Removal first element', () => {
+    test('should remove first element from head and return their values', () => {
       const list = createList([44, 32, 22]);
       expect(list.removeFirst()).toBe(44);
       expect(list.removeFirst()).toBe(32);
       expect(list.removeFirst()).toBe(22);
       expect(() => list.removeFirst()).toThrow(NotFoundError);
+    });
+  });
+
+  describe('Removal last element', () => {
+    test('should remove last element from tail and return their value', () => {
+      const list = createList([33, 45, 67]);
+      expect(list.removeLast()).toBe(67);
+      expect(list.removeLast()).toBe(45);
+      expect(list.removeLast()).toBe(33);
+      expect(() => list.removeLast()).toThrow(NotFoundError);
     });
   });
 
